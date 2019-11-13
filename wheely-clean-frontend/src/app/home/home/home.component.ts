@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  users = [{ value: 'cleaner', viewValue: 'Cleaner' },
+  { value: 'client', viewValue: 'Client' },
+  { value: 'admin', viewValue: 'Admin' }]
   constructor() { }
 
   ngOnInit() {
   }
+  redirect(userType: string) {
+    console.log(userType);
 
+  }
 }

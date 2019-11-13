@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div class="container">
+    <div class="img-wrapper">
+        <img src="assets/img/2.png" alt="">
+    </div>
+    <div class="login-container">
+        <mat-form-field>
+            <mat-label>User Type</mat-label>
+            <mat-select #selectUser>
+                <mat-option *ngFor="let user of users" [value]="user.value">
+                    {{user.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="redirect(selectUser.value)">Login</button>
+    </div>
+    <div class="footer">
+        <img src="assets/img/Wheely Clean.png" alt="">
+    </div>
+</div>

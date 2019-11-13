@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .img-wrapper{
+        flex-flow: row;
+        justify-content: space-around;
+        display: flex;
+        img {
+            height : 300px;
+        }
+    }
+    .login-container{
+        flex-flow: row wrap;
+        justify-content: space-around;
+        display: flex;
+        padding: 0 20px;
+        mat-form-field{
+            width: 250px
+        }
+        button {
+            width: 250px;
+            padding: 2px 16px;
+        }
+
+    }
+    .footer{
+        flex-flow: row;
+        justify-content: space-around;
+        display: flex;
+        img {
+            height: 100px
+        }
+    }
+}
