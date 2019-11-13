@@ -12,21 +12,87 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$wheely-clean-frontend-primary: mat-palette($mat-indigo);
-$wheely-clean-frontend-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$wheely-clean-palette:(
+    50 : #ede4f6,
+    100 : #d2bce7,
+    200 : #b490d8,
+    300 : #9663c8,
+    400 : #8041bc,
+    500 : #6920b0,
+    600 : #611ca9,
+    700 : #5618a0,
+    800 : #4c1397,
+    900 : #3b0b87,
+    A100 : #cfb7ff,
+    A200 : #ad84ff,
+    A400 : #8b51ff,
+    A700 : #7a37ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+$wheely-clean-palette-accent: (
+    50 : #f5fbff,
+    100 : #e6f4ff,
+    200 : #d6edff,
+    300 : #c5e5ff,
+    400 : #b8e0ff,
+    500 : #acdaff,
+    600 : #a5d6ff,
+    700 : #9bd0ff,
+    800 : #92cbff,
+    900 : #82c2ff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$angular-app-primary: mat-palette($wheely-clean-palette);
+$angular-app-accent: mat-palette($wheely-clean-palette-accent, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$wheely-clean-frontend-warn: mat-palette($mat-red);
+$angular-app-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$wheely-clean-frontend-theme: mat-light-theme($wheely-clean-frontend-primary, $wheely-clean-frontend-accent, $wheely-clean-frontend-warn);
+$angular-app-theme: mat-light-theme($angular-app-primary, $angular-app-accent, $angular-app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($wheely-clean-frontend-theme);
+@include angular-material-theme($angular-app-theme);
 
-/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
