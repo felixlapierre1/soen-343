@@ -3,7 +3,7 @@ SOEN343 - Software Design 1 - Team Project
 
 | Team Member        | Github User           |
 | ------------- |:-------------:|
-| Felix Lapierre     | felixlapierre1 |
+| Felix Lapierre     | felixlapierre |
 | Rebecca (Jun) Loke      | arejayelle      |
 | Alec Adub | alecadub      |
 | Sharon Chee Yin Ho | sharon-ho |
