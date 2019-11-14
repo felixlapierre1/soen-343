@@ -5,18 +5,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HomeModule } from './home/home.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+
+import { CustomerModule } from './customer/customer.module';
+import { CleanerModule } from './cleaner/cleaner.module';
+
+import { HomeComponent } from './home/home.component';
+
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HomeModule
+    MatToolbarModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCardModule,
+    CustomerModule,
+    CleanerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
