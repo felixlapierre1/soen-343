@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
     if (userType === 'cleaner') {
       this.router.navigate(['/cleaner']);
     }
- 
-
+    if (userType === 'admin') {
+      this.router.navigate(['/admin']);
+    }
   }
 }

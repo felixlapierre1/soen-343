@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { CustomerModule } from './customer/customer.module';
 import { CleanerModule } from './cleaner/cleaner.module';
+import { AdminModule } from './admin/admin.module';
 
 import { HomeComponent } from './home/home.component';
 
@@ -31,7 +32,8 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatCardModule,
     CustomerModule,
-    CleanerModule
+    CleanerModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
