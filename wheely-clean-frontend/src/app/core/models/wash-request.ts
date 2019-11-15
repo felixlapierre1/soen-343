@@ -7,21 +7,21 @@ export interface WashRequest {
     cleanerAccountId?: string;
     carDetails: CarDetails;
 }
-enum RequestStatus {
-    PENDING,
-    ACCEPTED,
-    EN_ROUTE,
-    IN_PROGRESS,
-    CANCELLED,
-    COMPLETED
+export enum RequestStatus {
+    PENDING = 'Pending',
+    ACCEPTED = 'Accepted',
+    EN_ROUTE = 'En Route',
+    IN_PROGRESS = 'In Progress',
+    CANCELLED = 'Cancelled',
+    COMPLETED = 'Completed',
 }
-enum WashType {
-   BRONZE,
-   GOLD,
-   PLATINUM,
-   SILVER
+export enum WashType {
+   BRONZE = 'Bronze',
+   GOLD = 'Gold',
+   PLATINUM = 'Platinum',
+   SILVER = 'Silver'
 }
-interface CarDetails {
+export interface CarDetails {
     make: string;
     model: string;
     category: string;
