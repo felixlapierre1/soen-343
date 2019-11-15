@@ -5,3 +5,4 @@ WheelyCleanBackend/WheelyCleanBackend.iml
 WheelyCleanBackend/local.properties
 /WheelyCleanBackend/.idea/
 
+/WheelyCleanBackend/src/main/resources/application.properties
