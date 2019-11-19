@@ -11,6 +11,7 @@ import app.washrequest.WashRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,10 +22,9 @@ public class CleanerController {
     private CleanerRepository repository;
     
     @PostMapping("/cleaner")
-    public @ResponseBody Cleaner addNewCleaner(@RequestParam String name) {
-        Cleaner c = new Cleaner(name);
-        repository.save(c);
-        return c;
+    public @ResponseBody Cleaner addNewCleaner(@RequestBody Cleaner cleaner) {
+        repository.save(cleaner);
+        return cleaner;
     }
     
     @GetMapping("/cleaner")
