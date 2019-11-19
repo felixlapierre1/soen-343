@@ -48,7 +48,7 @@ public class CleanerController {
         if(result.isPresent()) {
             return result.get().getRequests();
         } else {
-            throw new NoContentException(id);
+            throw new NoContentException("cleaner", id);
         }
     }
 }
