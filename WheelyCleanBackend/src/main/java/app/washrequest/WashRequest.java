@@ -7,6 +7,7 @@ package app.washrequest;
 
 import app.cleaner.Cleaner;
 import app.customer.Customer;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,11 +34,17 @@ public class WashRequest {
     
     @ManyToOne
     @JoinColumn
+    @JsonIgnore
     private Cleaner assignedCleaner;
+    
+    private Integer cleanerAccountId;
     
     @ManyToOne
     @JoinColumn
+    @JsonIgnore
     private Customer customer;
+    
+    private Integer customerAccountId;
 
     @Column(name = "time")
     private String time;
@@ -48,10 +55,29 @@ public class WashRequest {
     @Column(name = "washType")
     private String washType;
     
-    @Column(name = "washStatus")
-    private String washStatus;
+    @Column(name = "status")
+    private String status;
+    
+    @Column(name = "location")
+    private Location location;
     
     public WashRequest() {}
+    
+    public Integer getCleanerAccountId() {
+        return cleanerAccountId;
+    }
+
+    public void setCleanerAccountId(int cleanerAccountId) {
+        this.cleanerAccountId = cleanerAccountId;
+    }
+
+    public Integer getCustomerAccountId() {
+        return customerAccountId;
+    }
+
+    public void setCustomerAccountId(int customerAccountId) {
+        this.customerAccountId = customerAccountId;
+    }
 
     public int getId() {
         return id;
@@ -101,12 +127,20 @@ public class WashRequest {
         this.washType = washType;
     }
 
-    public String getWashStatus() {
-        return washStatus;
+    public String getStatus() {
+        return status;
     }
 
-    public void setWashStatus(String washStatus) {
-        this.washStatus = washStatus;
+    public void setWashStatus(String status) {
+        this.status = status;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
     
 }

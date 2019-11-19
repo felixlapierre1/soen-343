@@ -29,7 +29,7 @@ public class CustomerController {
         if(result.isPresent()) {
             return result.get();
         } else {
-            throw new NoContentException(id);
+            throw new NoContentException("customer", id);
         }
     }
     
@@ -44,7 +44,7 @@ public class CustomerController {
         if(result.isPresent()) {
             return result.get().getRequests();
         } else {
-            throw new NoContentException(id);
+            throw new NoContentException("customer", id);
         }
     }
 }

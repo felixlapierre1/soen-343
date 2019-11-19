@@ -5,13 +5,26 @@
  */
 package app.washrequest;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Felix
  */
-public class Location {
+@Entity
+@Table(name = "location")
+public class Location implements Serializable {
     private String longitude;
     private String latitude;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
     public String getLongitude() {
         return longitude;
