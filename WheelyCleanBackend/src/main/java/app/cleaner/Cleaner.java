@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Felix & bean
+ * @author Felix & bean :3
  */
 @Entity //This tells Hibernate to make a table out of this class
 @Table(name = "cleaner")

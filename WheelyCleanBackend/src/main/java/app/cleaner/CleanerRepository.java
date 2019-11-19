@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
- * @author Felix
+ * @author Jun
  */
 public interface CleanerRepository extends JpaRepository<Cleaner, Integer> {
     
