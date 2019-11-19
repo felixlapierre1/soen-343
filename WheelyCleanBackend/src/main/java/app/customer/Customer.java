@@ -7,6 +7,7 @@ package app.customer;
 
 import app.washrequest.WashRequest;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -33,7 +34,7 @@ public class Customer implements Serializable {
     private String name;
     
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private Set<WashRequest> requests;
+    private List<WashRequest> requests;
     
     public Customer() {}
     public Customer(String name){
@@ -51,11 +52,11 @@ public class Customer implements Serializable {
         return this.name;
     }
 
-    public Set<WashRequest> getRequests() {
+    public List<WashRequest> getRequests() {
         return requests;
     }
 
-    public void setRequests(Set<WashRequest> requests) {
+    public void setRequests(List<WashRequest> requests) {
         this.requests = requests;
     }
 }
