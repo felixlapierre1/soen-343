@@ -62,7 +62,6 @@ export class CleanerRequestListComponent implements OnInit {
     this.cleanerService.getCleanerRequests('1').subscribe((res) => {
       this.requestList = res;
     });
-
   }
 
 }

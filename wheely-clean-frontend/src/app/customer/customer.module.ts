@@ -16,14 +16,14 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { DatetimePickerModule } from '@fundamental-ngx/core';
 import { DatePickerModule } from '@fundamental-ngx/core';
 import { TimePickerModule } from '@fundamental-ngx/core';
-
+import { CustomerWashDetailsComponent } from './pages/customer-wash-details/customer-wash-details.component';
 import { IconModule } from '@fundamental-ngx/core';
 import { CustomerRequestCreateComponent } from './pages/customer-request-create/customer-request-create.component';
 
 import { APIKey } from '../../env.js';
 
 @NgModule({
-  declarations: [CustomerRequestListComponent, ListItemComponent, CustomerRequestCreateComponent],
+  declarations: [CustomerRequestListComponent, ListItemComponent, CustomerRequestCreateComponent, CustomerWashDetailsComponent],
   imports: [
     CommonModule,
     CustomerRoutingModule,

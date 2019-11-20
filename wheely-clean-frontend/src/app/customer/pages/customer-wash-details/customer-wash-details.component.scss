@@ -1,0 +1,43 @@
+@import "../../../stylings/wheely-clean-colors.scss";
+
+.container > * {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.mat-list-item h4 {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.mat-list-item p {
+    font-size: 12px;
+}
+.pink {
+    color: $wheely-clean-pink;
+}
+.blue{
+    color: $wheely-clean-blue;
+}
+.red{
+    color:  $wheely-clean-red;
+}
+.green{
+    color: $wheely-clean-green;
+}
+.grey{
+    color:  $wheely-clean-grey;
+}
+
+.submit-buttons{
+    display: flex;
+    justify-content: flex-end;
+
+    button{
+        width: 100px;
+    }
+  } 

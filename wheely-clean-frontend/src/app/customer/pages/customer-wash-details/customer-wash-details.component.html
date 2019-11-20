@@ -1,0 +1,39 @@
+<mat-toolbar color="grey">
+    <mat-toolbar-row>
+        <button mat-icon-button color="secondary" (click)="closeWashDetails()"><mat-icon>close</mat-icon></button>
+        <span style="padding-left:10px;">Wash Information - ID {{ washId }}</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+    <mat-list>
+        <mat-label>Status</mat-label>
+        <mat-list-item>
+            <mat-icon mat-list-icon [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{icon}}</mat-icon>
+            <h4 mat-line [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{request.status}}</h4>
+        </mat-list-item>
+
+        <mat-label>Car Information</mat-label>
+        <mat-list-item>
+            Make
+        </mat-list-item>
+        <mat-list-item>
+            Make
+        </mat-list-item>
+        <mat-list-item>
+            Make
+        </mat-list-item>
+
+        <mat-label>Wash Information</mat-label>
+        <mat-list-item>
+            Make
+        </mat-list-item>
+    </mat-list>
+
+
+    <div class="submit-buttons">
+        <button mat-button style="color: red;" (click)="cancelWash()" buttons>Cancel Wash</button>
+    </div>
+
+    <br />
+</div>
