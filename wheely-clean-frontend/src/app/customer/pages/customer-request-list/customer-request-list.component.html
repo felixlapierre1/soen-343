@@ -7,6 +7,6 @@
 </mat-toolbar>
 <mat-list>
     <ng-container *ngFor="let request of requestList">
-        <app-list-item [request]="request"></app-list-item>
+        <app-list-item [request]="request" [userType] ="'customer'"></app-list-item>
     </ng-container>
 </mat-list>

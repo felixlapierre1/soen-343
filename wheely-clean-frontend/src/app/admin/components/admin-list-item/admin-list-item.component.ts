@@ -1,23 +1,25 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { WashRequest } from 'src/app/core/models/wash-request';
-import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AssignWashDialogComponent } from '../assign-wash-dialog/assign-wash-dialog.component';
 
 @Component({
-  selector: 'app-list-item',
-  templateUrl: './list-item.component.html',
-  styleUrls: ['./list-item.component.scss']
+  selector: 'app-admin-list-item',
+  templateUrl: './admin-list-item.component.html',
+  styleUrls: ['./admin-list-item.component.scss']
 })
-export class ListItemComponent implements OnInit {
+export class AdminListItemComponent implements OnInit {
 
   @Input() request: WashRequest;
-  @Input() userType: string;
-  icon: string;
   color: string;
-
-  constructor(private router: Router) { }
+  icon: string;
+  time: string;
+  cleanerList = ['Thomas Gauvin', 'Lara Tran'];
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     this.generateIconName();
+    this.time = this.request.time.toTimeString().substring(0, 9);
   }
 
   generateIconName() {
@@ -45,14 +47,16 @@ export class ListItemComponent implements OnInit {
       this.icon = 'check_circle';
       this.color = 'green';
     }
-
   }
-  onClick(){
-    if (this.userType === 'cleaner') {
-      this.router.navigateByUrl('/cleaner/wash-details', { state: { request: this.request } });
-      // this.router.navigate(['/cleaner/wash-details', this.request.id] );
+  openDialog() {
+    const dialogRef = this.dialog.open(AssignWashDialogComponent, {
+      width: '250px',
+      data: {list: this.cleanerList}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
 
-    }
   }
 
 }

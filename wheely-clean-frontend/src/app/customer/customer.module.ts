@@ -43,6 +43,6 @@ import { APIKey } from '../../env.js';
       apiKey: APIKey
 
     })],
-  exports: [CustomerRequestListComponent]
+  exports: [CustomerRequestListComponent, ListItemComponent]
 })
 export class CustomerModule { }

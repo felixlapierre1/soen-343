@@ -1,1 +1,10 @@
-<p>cleaner-request-list works!</p>
+<mat-toolbar color="primary">
+    <mat-toolbar-row >
+        <span>Assigned Washes</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-list>
+    <ng-container *ngFor="let request of requestList">
+        <app-list-item [request]="request" [userType] ="'cleaner'"></app-list-item>
+    </ng-container>
+</mat-list>

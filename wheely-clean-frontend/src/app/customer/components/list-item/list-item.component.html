@@ -1,6 +1,6 @@
-<mat-list-item>
+<mat-list-item (click) ="onClick()">
     <mat-icon mat-list-icon [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{icon}}</mat-icon>
     <h4 mat-line [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{request.status}}</h4>
     <p>{{request.time}}</p>
-    <p mat-line>{{request.id}}</p>
+    <p mat-line>ID: {{request.id}}</p>
   </mat-list-item>

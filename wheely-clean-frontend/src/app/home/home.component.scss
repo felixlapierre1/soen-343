@@ -11,8 +11,9 @@
         }
     }
     .login-container{
-        flex-flow: row wrap;
-        justify-content: space-around;
+        
+        flex-flow: column;
+        align-items: center;
         display: flex;
         padding: 0 20px;
         mat-form-field{
@@ -33,5 +34,4 @@
             height: 100px
         }
     }
-
 }

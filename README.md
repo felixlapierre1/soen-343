@@ -36,3 +36,14 @@ SOEN343 - Software Design 1 - Team Project
 ### Starting the server
 - Open a terminal in the WheelyCleanBackend folder
 - Enter the command "run.bat". It will build and run the backend server on port 8080. You can check that the server has started correctly by heading to localhost:8080/greeting
+
+## How to setup Frontend
+### Prereqs
+- Install Node.js (comes with npm)
+- To verify that Node.js is installed, open a terminal and enter the command "node -v"
+- To verify that Node.js is installed, open a terminal and enter the command "npm -v"
+### Starting the server
+- Open a separate terminal in the wheely-clean-frontend folder
+- Enter the command "npm i"
+- To start the server, enter the command "npm start". Head to "localhost:4200"
+

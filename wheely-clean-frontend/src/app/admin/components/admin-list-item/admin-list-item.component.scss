@@ -1,0 +1,27 @@
+@import "../../../stylings/wheely-clean-colors.scss";
+
+.mat-list-item h4 {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.mat-list-item p {
+    font-size: 12px;
+}
+.pink {
+    color: $wheely-clean-pink;
+}
+.blue{
+    color: $wheely-clean-blue;
+}
+.red{
+    color:  $wheely-clean-red;
+}
+.green{
+    color: $wheely-clean-green;
+}
+.grey{
+    color:  $wheely-clean-grey;
+}
+button{
+    padding: 0px
+}

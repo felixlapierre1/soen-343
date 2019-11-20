@@ -1,0 +1,58 @@
+<mat-toolbar color="grey">
+    <mat-toolbar-row>
+        <button mat-icon-button color="secondary" (click)="closeWashDetails()">
+            <mat-icon>close</mat-icon>
+        </button>
+        <span style="padding-left:10px;">Wash Information - ID: {{request.id}}</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+    <h3>Status</h3>
+    <mat-form-field>
+        <mat-select placeholder="{{status}}" [(value)]="status" #selectStatus>
+            <mat-option *ngFor="let status of statuses" [value]="status.value">
+                {{status.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <h3>Car Information</h3>
+    <div class="carInformation">
+        <div class="info">
+            <p>Make</p>
+            <span>{{request.carDetails.make}}</span>
+        </div>
+        <div class="info">
+            <p>Color</p>
+            <span>{{request.carDetails.color}}</span>
+        </div>
+        <div class="info">
+            <p>Model</p>
+            <span>{{request.carDetails.model}}</span>
+        </div>
+    </div>
+    <h3>Wash Information</h3>
+    <div class="washInformation">
+        <div class="info">
+            <p>Type</p>
+            <span
+                [ngClass]="{'bronze': request.washType === 'Bronze', 'silver': request.washType === 'Silver', 'gold': request.washType === 'Gold', 'platinum': request.washType === 'Platinum'}">{{request.washType}}</span>
+        </div>
+        <div class="info">
+            <p>Time</p>
+            <span>{{request.time}}</span>
+        </div>
+        <div class="info">
+            <p>Date</p>
+            <span>{{request.time}}</span>
+        </div>
+    </div>
+    <h3>Location</h3>
+    <div class="location">
+        <agm-map style="height: 300px;" [latitude]='defaultLatitude' [longitude]='defaultLongitude' [zoom]="12"
+            [mapTypeId]='mapType'>
+            <agm-marker [latitude]="defaultLatitude" [longitude]="defaultLongitude">
+            </agm-marker>
+        </agm-map>
+    </div>
+    <button mat-raised-button color="primary" (click)="save()" buttons>Save</button>
+</div>
