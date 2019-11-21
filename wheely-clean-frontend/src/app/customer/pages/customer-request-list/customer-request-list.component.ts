@@ -25,6 +25,10 @@ export class CustomerRequestListComponent implements OnInit {
     this.router.navigate([`/customer/create-request/${washId}`]);
   }
 
+  goHome(){
+    this.router.navigate(['/']);
+  }
+
   getRequests(){
     this.customerService.getCustomerRequestsForCustomerId('2').subscribe((res) => {
       console.log(res);

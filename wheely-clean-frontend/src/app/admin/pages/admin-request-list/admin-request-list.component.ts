@@ -5,7 +5,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { CleanerHttpClientService } from 'src/app/core/services/cleaner-http-client.service';
 import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { RequestHttpClientService } from 'src/app/core/services/request-http-client.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-request-list',
@@ -16,7 +16,7 @@ export class AdminRequestListComponent implements OnInit {
 
   cleanerList: Array<Cleaner>;
   requestList: Array<WashRequest>;
-  constructor(private cleanerService: CleanerHttpClientService, private requestService: RequestHttpClientService) { }
+  constructor(private router: Router, private cleanerService: CleanerHttpClientService, private requestService: RequestHttpClientService) { }
 
   ngOnInit() {
     this.getCleanerList();
@@ -39,6 +39,9 @@ export class AdminRequestListComponent implements OnInit {
     this.requestService.updateRequest($event).subscribe((res) => {
       this.getRequestList();
     });
+  }
+  goHome(){
+    this.router.navigate(['/']);
   }
 
 }

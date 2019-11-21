@@ -4,10 +4,15 @@
     width: 100%;
 }
 
-.container {
+.statusIndicator h4 {
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding-left: 20px;
+}
+
+.statusIndicator{
     display: flex;
-    flex-direction: column;
-    padding: 30px;
+    align-items: center;
 }
 
 .mat-list-item h4 {
@@ -41,3 +46,41 @@
         width: 100px;
     }
   } 
+
+  @import "../../../stylings/wheely-clean-colors.scss";
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    .carInformation {
+        display: flex;
+        flex-flow: row wrap;
+
+        .info{
+            flex-direction: column;
+            flex-basis: 48%;
+            span{
+                color: #666666;
+            }
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+    button{
+        align-self: flex-end;
+        margin-top: 20px;
+    }
+}
+.bronze{
+    color: $wheely-clean-bronze;
+}
+.gold{
+    color: $wheely-clean-gold;
+}
+.silver{
+    color: $wheely-clean-silver;
+}
+.platinum{
+    color: $wheely-clean-platinum;
+}

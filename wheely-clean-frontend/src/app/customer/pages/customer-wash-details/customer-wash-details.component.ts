@@ -19,6 +19,11 @@ export class CustomerWashDetailsComponent implements OnInit {
 
   request : WashRequest;
 
+  longitude : string = '0';
+  latitude : string = '0';
+  mapType  = 'satellite';
+
+
   constructor(private route: ActivatedRoute, private router: Router, private customerService : CustomerHttpClientService) {}
 
   ngOnInit() {
@@ -65,6 +70,8 @@ export class CustomerWashDetailsComponent implements OnInit {
     this.customerService.getCustomerRequestByRequestId(requestId).subscribe((res) => {
       this.request = res;
       this.generateIconName(res);
+      this.latitude = res.location.latitude;
+      this.longitude = res.location.longitude;
     });
   }
 

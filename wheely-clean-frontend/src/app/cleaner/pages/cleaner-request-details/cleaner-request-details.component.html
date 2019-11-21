@@ -48,9 +48,9 @@
     </div>
     <h3>Location</h3>
     <div class="location">
-        <agm-map style="height: 300px;" [latitude]='defaultLatitude' [longitude]='defaultLongitude' [zoom]="12"
+        <agm-map style="height: 300px;" [latitude]='+latitude' [longitude]='+longitude' [zoom]="12"
             [mapTypeId]='mapType'>
-            <agm-marker [latitude]="defaultLatitude" [longitude]="defaultLongitude">
+            <agm-marker [latitude]="latitude" [longitude]="longitude">
             </agm-marker>
         </agm-map>
     </div>

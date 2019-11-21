@@ -6,30 +6,52 @@
 </mat-toolbar>
 
 <div class="container">
-    <mat-list>
-        <mat-label>Status</mat-label>
-        <mat-list-item>
-            <mat-icon mat-list-icon [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{icon}}</mat-icon>
-            <h4 mat-line [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{request.status}}</h4>
-        </mat-list-item>
+    <h3>Status</h3>
+    <div class = "statusIndicator">
+        <mat-icon mat-list-icon [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{icon}}</mat-icon>
+        <h4 mat-line [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{request.status}}</h4>
+        
+    </div>
 
-        <mat-label>Car Information</mat-label>
-        <mat-list-item>
-            Make
-        </mat-list-item>
-        <mat-list-item>
-            Make
-        </mat-list-item>
-        <mat-list-item>
-            Make
-        </mat-list-item>
-
-        <mat-label>Wash Information</mat-label>
-        <mat-list-item>
-            Make
-        </mat-list-item>
-    </mat-list>
-
+    <h3>Car Information</h3>
+    <div class="carInformation">
+        <div class="info">
+            <p>Make</p>
+            <span>{{request.carDetails.make}}</span>
+        </div>
+        <div class="info">
+            <p>Color</p>
+            <span>{{request.carDetails.color}}</span>
+        </div>
+        <div class="info">
+            <p>Model</p>
+            <span>{{request.carDetails.model}}</span>
+        </div>
+    </div>
+    <h3>Wash Information</h3>
+    <div class="washInformation">
+        <div class="info">
+            <p>Type</p>
+            <span
+                [ngClass]="{'bronze': request.washType === 'Bronze', 'silver': request.washType === 'Silver', 'gold': request.washType === 'Gold', 'platinum': request.washType === 'Platinum'}">{{request.washType}}</span>
+        </div>
+        <div class="info">
+            <p>Time</p>
+            <span>{{request.time}}</span>
+        </div>
+        <div class="info">
+            <p>Date</p>
+            <span>{{request.time}}</span>
+        </div>
+    </div>
+    <h3>Location</h3>
+    <div class="location">
+        <agm-map style="height: 300px;" [latitude]='+latitude' [longitude]='+longitude' [zoom]="12"
+            [mapTypeId]='mapType'>
+            <agm-marker [latitude]="latitude" [longitude]="longitude">
+            </agm-marker>
+        </agm-map>
+    </div>
 
     <div class="submit-buttons" *ngIf="requestPending()">
         <button mat-button style="color: red;" (click)="cancelWash()" buttons>Cancel Wash</button>

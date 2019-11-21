@@ -3,6 +3,7 @@ import { WashStatus, WashType, WashRequest } from 'src/app/core/models/wash-requ
 import { RequestHttpClientService } from 'src/app/core/services/request-http-client.service';
 import { CustomerHttpClientService } from 'src/app/core/services/customer-http-client.service';
 import { CleanerHttpClientService } from 'src/app/core/services/cleaner-http-client.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cleaner-request-list',
@@ -10,50 +11,9 @@ import { CleanerHttpClientService } from 'src/app/core/services/cleaner-http-cli
   styleUrls: ['./cleaner-request-list.component.scss']
 })
 export class CleanerRequestListComponent implements OnInit {
-  // requestList: Array<WashRequest> = [{
-  //   id: '3123123',
-  //   customerAccountId: '3424234234234',
-  //   status: WashStatus.accepted,
-  //   washType: WashType.gold,
-  //   time: new Date(),
-  //   carDetails: {
-  //     category: 'Sedan',
-  //     color: 'blue',
-  //     make: 'Toyota',
-  //     model: 'Corolla',
-  //     plateNumber: 'HIHIHI'
-  //   }
-  // },
-  // {
-  //   id: '3123123',
-  //   customerAccountId: '3424234234234',
-  //   status: WashStatus.cancelled,
-  //   washType: WashType.bronze,
-  //   time: new Date(),
-  //   carDetails: {
-  //     category: 'Sedan',
-  //     color: 'blue',
-  //     make: 'Toyota',
-  //     model: 'Corolla',
-  //     plateNumber: 'HIHIHI'
-  //   }
-  // },
-  // {
-  //   id: '3123123',
-  //   customerAccountId: '3424234234234',
-  //   status: WashStatus.enRoute,
-  //   washType: WashType.silver,
-  //   time: new Date(),
-  //   carDetails: {
-  //     category: 'Sedan',
-  //     color: 'blue',
-  //     make: 'Toyota',
-  //     model: 'Corolla',
-  //     plateNumber: 'HIHIHI'
-  //   }
-  // }];
- requestList: Array<WashRequest>;
-  constructor(private cleanerService: CleanerHttpClientService) { }
+
+  requestList: Array<WashRequest>;
+  constructor(private router: Router, private cleanerService: CleanerHttpClientService) { }
 
   ngOnInit() {
     this.getRequests();
@@ -63,5 +23,7 @@ export class CleanerRequestListComponent implements OnInit {
       this.requestList = res;
     });
   }
-
+  goHome(){
+    this.router.navigate(['/']);
+  }
 }

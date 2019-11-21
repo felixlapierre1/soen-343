@@ -20,6 +20,9 @@ export class CleanerRequestDetailsComponent implements OnInit {
   mapType  = 'satellite';
   status: WashStatus;
 
+  longitude : string = '0';
+  latitude : string = '0';
+
   washId : string;
   private sub: any;
 
@@ -28,14 +31,17 @@ export class CleanerRequestDetailsComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.washId = params['washId']; // (+) converts string 'id' to a number
-      // TODO fetch info for id here
-      this.cleanerService.getCleanerRequestById(this.washId);
+      this.getRequestById(this.washId);
    });
+  }
 
-    this.request = window.history.state.request;
-    console.log(this.request);
-    this.status = this.request.status;
-    // this.route.params.subscribe(params => console.log(params));
+  getRequestById(washId){
+    this.cleanerService.getCleanerRequestById(this.washId).subscribe((res) => {
+      this.request = res;
+      this.status = this.request.status;
+      this.latitude = res.location.latitude;
+      this.longitude = res.location.longitude;
+    });
   }
   closeWashDetails(){
     this.router.navigate(['/cleaner']);
