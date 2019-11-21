@@ -7,8 +7,7 @@ import { CleanerRequestDetailsComponent } from './pages/cleaner-request-details/
 
 const routes: Routes = [
     { path: 'cleaner', component: CleanerRequestListComponent },
-    { path: 'cleaner/wash-details', component: CleanerRequestDetailsComponent}
-    // { path: 'cleaner/wash-details/:id', component: CleanerRequestDetailsComponent}
+    { path: 'cleaner/wash-details/:washId', component: CleanerRequestDetailsComponent}
 
   ];
 @NgModule({

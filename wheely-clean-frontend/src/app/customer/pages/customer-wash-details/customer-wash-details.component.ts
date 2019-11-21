@@ -30,6 +30,10 @@ export class CustomerWashDetailsComponent implements OnInit {
 
   }
 
+  requestPending(){
+    return this.request.status === 'pending';
+  }
+
   generateIconName(request) {
     if (request.status === WashStatus[WashStatus.accepted]) {
       this.icon = 'thumb_up';
@@ -70,7 +74,11 @@ export class CustomerWashDetailsComponent implements OnInit {
 
   cancelWash(){
     //TODO send DELETE request
-    console.log("TODO send DELETE request to server")
+    this.request.status = WashStatus.cancelled;
+    this.customerService.putCustomerWashRequestByRequestId(this.request).subscribe((res) => {
+      console.log(res);
+      this.closeWashDetails();
+    })
   }
 
   printState(){

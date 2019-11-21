@@ -31,7 +31,7 @@
     </mat-list>
 
 
-    <div class="submit-buttons">
+    <div class="submit-buttons" *ngIf="requestPending()">
         <button mat-button style="color: red;" (click)="cancelWash()" buttons>Cancel Wash</button>
     </div>
 

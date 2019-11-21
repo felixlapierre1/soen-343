@@ -9,6 +9,7 @@ import { WashRequest } from '../models/wash-request';
 export class CustomerHttpClientService {
 
   configUrl = 'http://localhost:8080/customer';
+  requestUrl = 'http://localhost:8080/request';
   baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
@@ -30,5 +31,8 @@ export class CustomerHttpClientService {
     return this.http.get<WashRequest>(`${this.baseUrl}/request`, {
       params: new HttpParams().set('id', requestId)
     });
+  }
+  putCustomerWashRequestByRequestId(request:WashRequest){
+    return this.http.put<WashRequest>(this.requestUrl, request);
   }
 }

@@ -49,10 +49,15 @@ export class ListItemComponent implements OnInit {
   }
   onClick(){
     if (this.userType === 'cleaner') {
-      this.router.navigateByUrl('/cleaner/wash-details', { state: { request: this.request } });
+      this.router.navigate(['/cleaner','wash-details', `${this.request.id}`], { state: { request: this.request } });
       // this.router.navigate(['/cleaner/wash-details', this.request.id] );
 
     }
-  }
+    else if (this.userType === 'customer') {
+      this.router.navigate(['/customer','wash-details', `${this.request.id}`], { state: { request: this.request } });
+      // this.router.navigate(['/cleaner/wash-details', this.request.id] );
+
+    }
+  } 
 
 }

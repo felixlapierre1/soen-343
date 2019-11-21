@@ -20,9 +20,18 @@ export class CleanerRequestDetailsComponent implements OnInit {
   mapType  = 'satellite';
   status: WashStatus;
 
-  constructor(private cleanerService : CleanerHttpClientService, private router: Router) { }
+  washId : string;
+  private sub: any;
+
+  constructor(private route: ActivatedRoute, private cleanerService : CleanerHttpClientService, private router: Router) { }
 
   ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      this.washId = params['washId']; // (+) converts string 'id' to a number
+      // TODO fetch info for id here
+      this.cleanerService.getCleanerRequestById(this.washId);
+   });
+
     this.request = window.history.state.request;
     console.log(this.request);
     this.status = this.request.status;

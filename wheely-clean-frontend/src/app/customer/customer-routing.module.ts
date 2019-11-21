@@ -6,7 +6,6 @@ import { CustomerWashDetailsComponent } from './pages/customer-wash-details/cust
 
 const routes: Routes = [
     { path: 'customer', component: CustomerRequestListComponent },
-    // { path: 'create-request', component: CustomerRequestCreateComponent },
     { path: 'customer/create-request', component: CustomerRequestCreateComponent },
     { path: 'customer/wash-details/:washId', component: CustomerWashDetailsComponent }
   ];
