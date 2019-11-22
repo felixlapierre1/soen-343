@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { WashType, WashRequest, WashStatus } from '../../../core/models/wash-request';
 import { FdDate } from '@fundamental-ngx/core';
 import { RequestHttpClientService } from 'src/app/core/services/request-http-client.service';
-
+import { CUSTOMER_ID } from '../../../../env.js';
 @Component({
   selector: 'app-customer-request-create',
   templateUrl: './customer-request-create.component.html',
@@ -71,7 +71,7 @@ export class CustomerRequestCreateComponent implements OnInit {
         model: this.model,
         plateNumber: this.plateNumber
       },
-      customerAccountId: '2', // hardcode, this would be the id of the user if we had auth and could get current user
+      customerAccountId: CUSTOMER_ID, // hardcode, this would be the id of the user if we had auth and could get current user
       location: {
         latitude: this.markerLatitude,
         longitude: this.markerLongitude

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { WashStatus, WashType, WashRequest } from 'src/app/core/models/wash-request';
-import { RequestHttpClientService } from 'src/app/core/services/request-http-client.service';
-import { CustomerHttpClientService } from 'src/app/core/services/customer-http-client.service';
+import { WashRequest } from 'src/app/core/models/wash-request';
 import { CleanerHttpClientService } from 'src/app/core/services/cleaner-http-client.service';
 import { Router } from '@angular/router';
-
+import { CLEANER_ID} from 'src/env.js';
 @Component({
   selector: 'app-cleaner-request-list',
   templateUrl: './cleaner-request-list.component.html',
@@ -19,7 +17,7 @@ export class CleanerRequestListComponent implements OnInit {
     this.getRequests();
   }
   getRequests(){
-    this.cleanerService.getCleanerRequests('1').subscribe((res) => {
+    this.cleanerService.getCleanerRequests(CLEANER_ID).subscribe((res) => {
       this.requestList = res;
     });
   }

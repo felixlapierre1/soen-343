@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WashRequest, WashStatus, WashType } from 'src/app/core/models/wash-request';
 import { Router } from '@angular/router';
 import { CustomerHttpClientService } from 'src/app/core/services/customer-http-client.service';
+import { CUSTOMER_ID } from '../../../../env.js';
 
 @Component({
   selector: 'app-customer-request-list',
@@ -30,11 +31,10 @@ export class CustomerRequestListComponent implements OnInit {
   }
 
   getRequests(){
-    this.customerService.getCustomerRequestsForCustomerId('2').subscribe((res) => {
+    this.customerService.getCustomerRequestsForCustomerId(CUSTOMER_ID).subscribe((res) => {
       console.log(res);
       this.requestList = res;
       console.log(this.requestList);
-      
     });
   }
 
