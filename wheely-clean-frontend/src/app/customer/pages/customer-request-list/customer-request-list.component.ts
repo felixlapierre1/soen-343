@@ -32,9 +32,7 @@ export class CustomerRequestListComponent implements OnInit {
 
   getRequests(){
     this.customerService.getCustomerRequestsForCustomerId(CUSTOMER_ID).subscribe((res) => {
-      console.log(res);
       this.requestList = res;
-      console.log(this.requestList);
     });
   }
 

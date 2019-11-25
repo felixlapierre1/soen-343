@@ -32,7 +32,8 @@ export class CustomerHttpClientService {
       params: new HttpParams().set('id', requestId)
     });
   }
-  putCustomerWashRequestByRequestId(request:WashRequest){
+  putCustomerWashRequestByRequestId(request: WashRequest){
+    delete request.cleanerAccountId;
     return this.http.put<WashRequest>(this.requestUrl, request);
   }
 }

@@ -5,6 +5,6 @@
 </mat-toolbar>
 <mat-list>
     <ng-container *ngFor="let request of requestList">
-        <app-admin-list-item [cleanerList] = "cleanerList" [request]="request" (updateWash)="updateWash($event)"></app-admin-list-item>
+        <app-admin-list-item *ngIf="request.status !== 'cancelled'" [cleanerList] = "cleanerList" [request]="request" (updateWash)="updateWash($event)"></app-admin-list-item>
     </ng-container>
 </mat-list>

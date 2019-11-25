@@ -31,7 +31,6 @@ export class CleanerHttpClientService {
     });
   }
   putCleanerRequest(request : WashRequest){
-    console.log(request);
     return this.http.put<WashRequest>(this.requestUrl, request);
   }
 }

@@ -9,7 +9,7 @@
     <h3>Status</h3>
     <div class = "statusIndicator">
         <mat-icon mat-list-icon [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{icon}}</mat-icon>
-        <h4 mat-line [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{request.status}}</h4>
+        <h4 mat-line [ngClass]="{'pink': color=== 'pink', 'green': color=== 'green', 'red': color === 'red', 'grey': color=== 'grey', 'blue': color=== 'blue'}">{{request.status | uppercase}}</h4>
         
     </div>
 
